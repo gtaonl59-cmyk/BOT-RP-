@@ -12,7 +12,7 @@ export default {
     .addSubcommand(s => s.setName('release').setDescription('Release a user early (mod only)')
       .addUserOption(o => o.setName('user').setDescription('User to release').setRequired(true)))
     .addSubcommand(s => s.setName('status').setDescription('Check your prison status'))
-    .addSubcommand(s => s.setName('check').setDescription('Check another user\'s status')
+    .addSubcommand(s => s.setName('check').setDescription('👤 تحقق من مستخدم آخر\'s status')
       .addUserOption(o => o.setName('user').setDescription('User to check').setRequired(true))),
 
   async execute(interaction) {

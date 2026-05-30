@@ -42,7 +42,7 @@ All data is saved in the `data/` folder as JSON files:
 
 | File | Contents |
 |------|----------|
-| `data/economy.json` | Wallets, banks, XP, levels |
+| `data/economy.json` | 👛 المحفظةs, banks, XP, levels |
 | `data/characters.json` | RP characters per user |
 | `data/jobs.json` | Current jobs |
 | `data/properties.json` | Owned properties |

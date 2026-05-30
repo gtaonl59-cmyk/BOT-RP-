@@ -34,7 +34,7 @@ export default {
       .setColor(0x2ecc71)
       .setDescription(`You sent **$${amount.toLocaleString()}** to **${target.username}**`)
       .addFields(
-        { name: '👛 Your Wallet', value: `$${eco.wallet.toLocaleString()}`, inline: true },
+        { name: '👛 Your 👛 المحفظة', value: `$${eco.wallet.toLocaleString()}`, inline: true },
         { name: '📤 Sent', value: `$${amount.toLocaleString()}`, inline: true },
         { name: '👤 Recipient', value: target.username, inline: true },
       );

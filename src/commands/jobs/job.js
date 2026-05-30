@@ -14,7 +14,7 @@ const JOBS = [
   { id: 'security', name: 'Security Guard', salary: 180, desc: 'Keep order at venues.' },
   { id: 'trucker', name: 'Truck Driver', salary: 260, desc: 'Haul cargo across the city.' },
   { id: 'pilot', name: 'Pilot', salary: 500, desc: 'Fly planes and helicopters.' },
-  { id: 'banker', name: 'Banker', salary: 380, desc: 'Manage finances at the bank.' },
+  { id: 'banker', name: '🏦 البنكer', salary: 380, desc: 'Manage finances at the bank.' },
 ];
 
 export default {

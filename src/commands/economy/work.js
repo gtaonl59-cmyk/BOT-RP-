@@ -48,7 +48,7 @@ export default {
       .setColor(0x3498db)
       .setDescription(`${msg} **$${pay.toLocaleString()}**`)
       .addFields(
-        { name: '👛 Wallet', value: `$${eco.wallet.toLocaleString()}`, inline: true },
+        { name: '👛 👛 المحفظة', value: `$${eco.wallet.toLocaleString()}`, inline: true },
         { name: '⭐ XP', value: '+30 XP', inline: true },
         { name: '💼 Job Bonus', value: jobs.job ? `Yes (${jobs.job})` : 'None', inline: true },
       );

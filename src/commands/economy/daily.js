@@ -37,7 +37,7 @@ export default {
       .setColor(0xf1c40f)
       .setDescription(`You received **$${reward.toLocaleString()}**!`)
       .addFields(
-        { name: '👛 New Wallet', value: `$${eco.wallet.toLocaleString()}`, inline: true },
+        { name: '👛 New 👛 المحفظة', value: `$${eco.wallet.toLocaleString()}`, inline: true },
         { name: '⭐ XP Gained', value: '+50 XP', inline: true },
         { name: '🔥 Multiplier', value: `${mult}x (${vip.tier})`, inline: true },
       );

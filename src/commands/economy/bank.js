@@ -32,8 +32,8 @@ export default {
         .setColor(0x2ecc71)
         .addFields(
           { name: '📥 Deposited', value: `$${amount.toLocaleString()}`, inline: true },
-          { name: '👛 Wallet', value: `$${eco.wallet.toLocaleString()}`, inline: true },
-          { name: '🏦 Bank', value: `$${eco.bank.toLocaleString()}`, inline: true },
+          { name: '👛 👛 المحفظة', value: `$${eco.wallet.toLocaleString()}`, inline: true },
+          { name: '🏦 🏦 البنك', value: `$${eco.bank.toLocaleString()}`, inline: true },
         );
       return interaction.reply({ embeds: [embed] });
     }
@@ -51,8 +51,8 @@ export default {
         .setColor(0x3498db)
         .addFields(
           { name: '📤 Withdrawn', value: `$${amount.toLocaleString()}`, inline: true },
-          { name: '👛 Wallet', value: `$${eco.wallet.toLocaleString()}`, inline: true },
-          { name: '🏦 Bank', value: `$${eco.bank.toLocaleString()}`, inline: true },
+          { name: '👛 👛 المحفظة', value: `$${eco.wallet.toLocaleString()}`, inline: true },
+          { name: '🏦 🏦 البنك', value: `$${eco.bank.toLocaleString()}`, inline: true },
         );
       return interaction.reply({ embeds: [embed] });
     }
