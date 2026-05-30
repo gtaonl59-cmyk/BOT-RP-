@@ -58,7 +58,7 @@ export default {
           .addFields(
             { name: 'Leader', value: leader?.displayName ?? userGang.leader, inline: true },
             { name: 'Members', value: `${userGang.members.length}`, inline: true },
-            { name: 'Gang 🏦 البنك', value: `$${(userGang.bank ?? 0).toLocaleString()}`, inline: true },
+            { name: 'Gang Bank', value: `$${(userGang.bank ?? 0).toLocaleString()}`, inline: true },
           )],
       });
     }

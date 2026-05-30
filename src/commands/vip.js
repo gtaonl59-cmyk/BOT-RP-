@@ -35,7 +35,7 @@ export default {
 
     if (sub === 'info') {
       const desc = Object.entries(TIERS).map(([name, t]) =>
-        `**${name.charAt(0).toUpperCase() + name.slice(1)}** — $${t.price.toLocaleString()}\n• ${t.mult}x daily/weekly • 🏦 البنك limit $${t.bankLimit.toLocaleString()}`
+        `**${name.charAt(0).toUpperCase() + name.slice(1)}** — $${t.price.toLocaleString()}\n• ${t.mult}x daily/weekly • Bank limit $${t.bankLimit.toLocaleString()}`
       ).join('\n\n');
       return interaction.reply({
         embeds: [new EmbedBuilder().setTitle('💎 VIP Tiers').setColor(0xf1c40f).setDescription(desc)],
@@ -52,7 +52,7 @@ export default {
           .addFields(
             { name: 'Tier', value: vip.tier.charAt(0).toUpperCase() + vip.tier.slice(1), inline: true },
             { name: 'Reward Multiplier', value: `${t?.mult ?? 1}x`, inline: true },
-            { name: '🏦 البنك Limit', value: `$${(t?.bankLimit ?? 0).toLocaleString()}`, inline: true },
+            { name: 'Bank Limit', value: `$${(t?.bankLimit ?? 0).toLocaleString()}`, inline: true },
           )],
       });
     }
@@ -71,7 +71,7 @@ export default {
       saveUser('vip', userId, { tier });
       return interaction.reply({
         embeds: [new EmbedBuilder().setTitle('💎 VIP Activated!').setColor(t.color)
-          .setDescription(`You are now a **${tier.charAt(0).toUpperCase() + tier.slice(1)} VIP** member!\n\n• **${t.mult}x** daily/weekly multiplier\n• 🏦 البنك limit: $${t.bankLimit.toLocaleString()}`)],
+          .setDescription(`You are now a **${tier.charAt(0).toUpperCase() + tier.slice(1)} VIP** member!\n\n• **${t.mult}x** daily/weekly multiplier\n• Bank limit: $${t.bankLimit.toLocaleString()}`)],
       });
     }
 

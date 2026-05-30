@@ -48,7 +48,7 @@ export default {
         .setTitle('🦹 Robbery Successful!')
         .setColor(0xe74c3c)
         .setDescription(`You robbed **${target.username}** and got away with **$${amount.toLocaleString()}**!`)
-        .addFields({ name: '👛 Your 👛 المحفظة', value: `$${eco.wallet.toLocaleString()}`, inline: true });
+        .addFields({ name: '👛 Your Wallet', value: `$${eco.wallet.toLocaleString()}`, inline: true });
       return interaction.reply({ embeds: [embed] });
     } else {
       const fine = Math.floor((eco.wallet ?? 0) * 0.1);
@@ -59,7 +59,7 @@ export default {
         .setTitle('🚔 Caught Red-Handed!')
         .setColor(0x95a5a6)
         .setDescription(`You tried to rob **${target.username}** but got caught! You paid **$${fine.toLocaleString()}** in fines.`)
-        .addFields({ name: '👛 Your 👛 المحفظة', value: `$${eco.wallet.toLocaleString()}`, inline: true });
+        .addFields({ name: '👛 Your Wallet', value: `$${eco.wallet.toLocaleString()}`, inline: true });
       return interaction.reply({ embeds: [embed] });
     }
   },

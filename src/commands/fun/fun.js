@@ -12,16 +12,16 @@ const TRIVIA = [
 export default {
   data: new SlashCommandBuilder()
     .setName('fun')
-    .setDescription('🎮 العب ألعابًا مصغرة ممتعة')
-    .addSubcommand(s => s.setName('coinflip').setDescription('🪙 اقلب العملة وراهن')
-      .addStringOption(o => o.setName('choice').setDescription('وجه أم كتابة').setRequired(true).addChoices({ name: 'وجه', value: 'heads' }, { name: 'كتابة', value: 'tails' }))
-      .addIntegerOption(o => o.setName('bet').setDescription('💸 مبلغ الرهان').setRequired(true).setMinValue(10)))
-    .addSubcommand(s => s.setName('dice').setDescription('🎲 ارمِ النرد (1-6)'))
-    .addSubcommand(s => s.setName('casino').setDescription('🎰 أدر آلة الحظ')
-      .addIntegerOption(o => o.setName('bet').setDescription('💸 مبلغ الرهان').setRequired(true).setMinValue(50)))
-    .addSubcommand(s => s.setName('rps').setDescription('✂️ حجر ورقة مقص')
-      .addStringOption(o => o.setName('choice').setDescription('حركتك').setRequired(true).addChoices({ name: 'حجر', value: 'rock' }, { name: 'ورقة', value: 'paper' }, { name: 'مقص', value: 'scissors' })))
-    .addSubcommand(s => s.setName('trivia').setDescription('❓ أجب عن سؤال واربح المال')),
+    .setDescription('Play fun mini-games')
+    .addSubcommand(s => s.setName('coinflip').setDescription('Flip a coin and bet')
+      .addStringOption(o => o.setName('choice').setDescription('heads or tails').setRequired(true).addChoices({ name: 'Heads', value: 'heads' }, { name: 'Tails', value: 'tails' }))
+      .addIntegerOption(o => o.setName('bet').setDescription('Amount to bet').setRequired(true).setMinValue(10)))
+    .addSubcommand(s => s.setName('dice').setDescription('Roll a dice (1–6)'))
+    .addSubcommand(s => s.setName('casino').setDescription('Spin the slot machine')
+      .addIntegerOption(o => o.setName('bet').setDescription('Amount to bet').setRequired(true).setMinValue(50)))
+    .addSubcommand(s => s.setName('rps').setDescription('Rock Paper Scissors')
+      .addStringOption(o => o.setName('choice').setDescription('Your move').setRequired(true).addChoices({ name: 'Rock', value: 'rock' }, { name: 'Paper', value: 'paper' }, { name: 'Scissors', value: 'scissors' })))
+    .addSubcommand(s => s.setName('trivia').setDescription('Answer a trivia question for cash')),
 
   async execute(interaction) {
     const sub = interaction.options.getSubcommand();
@@ -40,7 +40,7 @@ export default {
         .setTitle(`🪙 Coin Flip — ${result.toUpperCase()}!`)
         .setColor(win ? 0x2ecc71 : 0xe74c3c)
         .setDescription(win ? `✅ You won **$${bet.toLocaleString()}**!` : `❌ You lost **$${bet.toLocaleString()}**.`)
-        .addFields({ name: '👛 👛 المحفظة', value: `$${eco.wallet.toLocaleString()}`, inline: true });
+        .addFields({ name: '👛 Wallet', value: `$${eco.wallet.toLocaleString()}`, inline: true });
       return interaction.reply({ embeds: [embed] });
     }
 
@@ -72,7 +72,7 @@ export default {
         embeds: [new EmbedBuilder().setTitle('🎰 Slot Machine')
           .setColor(win ? 0xf1c40f : 0xe74c3c)
           .setDescription(`${reels.join(' | ')}\n\n${win ? `✅ You won **$${change.toLocaleString()}**! (${mult}x)` : `❌ You lost **$${bet.toLocaleString()}**.`}`)
-          .addFields({ name: '👛 👛 المحفظة', value: `$${eco.wallet.toLocaleString()}`, inline: true })],
+          .addFields({ name: '👛 Wallet', value: `$${eco.wallet.toLocaleString()}`, inline: true })],
       });
     }
 
@@ -86,7 +86,7 @@ export default {
       if (wins[player] === bot) { result = '✅ You Win!'; color = 0x2ecc71; }
       else if (wins[bot] === player) { result = '❌ You Lose!'; color = 0xe74c3c; }
       return interaction.reply({
-        embeds: [new EmbedBuilder().setTitle('✊ ✂️ حجر ورقة مقص').setColor(color)
+        embeds: [new EmbedBuilder().setTitle('✊ Rock Paper Scissors').setColor(color)
           .setDescription(`You: ${icons[player]} **${player}**\nBot: ${icons[bot]} **${bot}**\n\n**${result}**`)],
       });
     }

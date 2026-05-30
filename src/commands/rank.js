@@ -33,7 +33,7 @@ export default {
         embeds: [new EmbedBuilder().setTitle('📊 Your Rank').setColor(0x3498db)
           .addFields(
             { name: 'Rank', value: `#${pos + 1} of ${sorted.length}`, inline: true },
-            { name: '💵 صافي الثروة', value: `$${u.net.toLocaleString()}`, inline: true },
+            { name: 'Net Worth', value: `$${u.net.toLocaleString()}`, inline: true },
             { name: 'Level', value: `${u.level}`, inline: true },
           )],
       });
