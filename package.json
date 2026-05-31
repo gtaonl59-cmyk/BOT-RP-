@@ -1,7 +1,7 @@
 {
   "name": "rpcity-bot",
   "version": "1.0.0",
-  "description": "RP City Discord Bot — JSON storage, no database",
+  "description": "RP City Discord Bot",
   "type": "module",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "discord.js": "^14.16.3",
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.4.5",
+    "mongoose": "^8.15.0"
   }
 }
