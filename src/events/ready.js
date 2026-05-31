@@ -7,7 +7,12 @@ export default {
     console.log(`✅  Logged in as ${client.user.tag}`);
     try {
       const rest = new REST().setToken(process.env.DISCORD_TOKEN);
-      await rest.put(Routes.applicationCommands(client.user.id), { body: commandData });
+      
+      await rest.put(
+        Routes.applicationCommands(client.user.id), 
+        { body: commandData }
+      );
+      
       console.log(`📋  Registered ${commandData.length} slash commands globally.`);
     } catch (err) {
       console.error('❌  Failed to register commands:', err.message);
